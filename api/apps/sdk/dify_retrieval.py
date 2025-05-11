@@ -30,7 +30,7 @@ def retrieval(tenant_id):
     req = request.json
     question = req["query"]
     kb_id = req["knowledge_id"]
-    use_kg = req.get("use_kg", False)
+    use_kg = req.get("use_kg", True)
     retrieval_setting = req.get("retrieval_setting", {})
     similarity_threshold = float(retrieval_setting.get("score_threshold", 0.0))
     top = int(retrieval_setting.get("top_k", 1024))
